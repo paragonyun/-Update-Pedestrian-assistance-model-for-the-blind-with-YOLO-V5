@@ -25,7 +25,8 @@ In addition, the article found out that even though the bus that the blind has t
   I used recommended Image Size for YOLO V5 models.  
   
 # 사용한 모델 (Model)
-- Model : YOLO V5 **L**:new:   
+- Model : YOLO V5 **L**:new:  
+  기존엔 s를 사용했으나 m과 L을 학습시켜본 결과 s에 비해 시간이 각각 10초, 20초 정도의 차이를 보였습니다. 이에 데이터셋을 더 늘렸을 때 충분히 감당할 수 있는 L 을 선택했습니다. 
 
 # 학습 환경 (Training Environment)
 - Colab Pro
@@ -34,10 +35,32 @@ In addition, the article found out that even though the bus that the blind has t
 1. 셀렉트 스타 - :vertical_traffic_light:교차로 및 화폐 정보 데이터셋 from..  [Here](https://open.selectstar.ai/data-set/wesee)
 2. 자체 제작 데이터셋 - :bus:버스 및 노선 번호 정보 데이터셋 with.. [Roboflow](https://roboflow.com/) :new:
 
-# 학습 전략 (Training Strategy)  
-
-
-
-
+# 데이터셋 구축 (Building Dataset) :new:
+- 이미지 (Images) : 나무위키 서울시 버스 데이터 활용 (Namu Wiki Bus Images) [Here](https://namu.wiki/w/%EC%84%9C%EC%9A%B8%20%EB%B2%84%EC%8A%A4%20101)  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 405 of Original Images  
+- 활용 툴 (Labeling Tool) : Roboflow
+- 인력 (# Labor) : 4 workers
+- 클래스 (Class) : 11 classes (0 ~ 9 , BUS)
+- 라벨링 예시 (Labeling Example) 
+![image](https://user-images.githubusercontent.com/83996346/181172562-a3b17fc5-6683-4a81-a434-e1c175fb45aa.png)  
+  
+- 전처리 (Preprocessing) : Auto-Orient, Resize to 640
+- Augmentation List     
+**[First Augmentation]**  
+  Crop : 0% ~ 20% Zoom   
+  Hue : -29 ~ +29 ## To be robust to color of BUS  
+  Brightness : -20% ~ +20% ## To train for inference at night  
+  Noise : Up to 3% of Pixels   
+  Cutout : 3 boxes with 20% size each ## To train for the case that something is in front of BUS  
+    
+  **[Second Augmentation]**  
+  Crop : 0% ~ 30% Zoom  
+  Rotation : -10 ~ +10  
+  Hue : -15 ~ + 15  
+  Exposure : -10% ~ +10%  
+  Bounding Box Noise : Up to 2% of Pixels  
+  
+Roboflow에서 무료로 제공하는 이미지 증가 수를 최대 input의 3배만 지원하기 때문에 총 2번의 Augmentation을 통해 약 400장의 데이터셋을 약 8000장으로 증가시켰습니다.  
+Roboflow only supports three times the maximum number of free image increases, so I have increased the total images from 405 to approximately 8000 datasets by **Two-Stage Augmentation**
 
 
