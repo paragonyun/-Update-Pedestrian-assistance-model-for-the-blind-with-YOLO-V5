@@ -63,4 +63,17 @@ In addition, the article found out that even though the bus that the blind has t
 Roboflow에서 무료로 제공하는 이미지 증가 수를 최대 input의 3배만 지원하기 때문에 총 2번의 Augmentation을 통해 약 400장의 데이터셋을 약 8000장으로 증가시켰습니다.  
 Roboflow only supports three times the maximum number of free image increases, so I have increased the total images from 405 to approximately 8000 datasets by **Two-Stage Augmentation**
 
+# 불균형 조정 (Balancing Classes)
+Bus dataset : 8,000 Images  
+Cross dataset : 36,000 Images  
+  
+두 데이터를 단순하게 합치면 당연히 Cross 쪽의 데이터가 더 많으므로 버스를 상대적으로 인식하지 못했습니다. 때문에 Undersampling을 진행하여 8,000 : 8,000으로 데이터셋의 비율을 맞추는 것으로 데이터셋 간 불균형을 해소했습니다.  
+  
+다만 각 데이터셋 '내부'의 클래스 불균형은 해소하지 않고 그대로 진행했습니다. 각 class는 BUS 혹은 Zebra-Cross와 항상 함께 나타나는 특징이 있었기 때문입니다.  
+(Ex : 버스는 무조건 노선 번호가 있고 횡단보도는 '엔간하면' 보행자 신호등이 있음)  
+  
+물론 이미지 합성을 통해 데이터셋 내부의 불균형을 해소하는 방안도 떠올랐지만 기술 부족으로 시현해내지 못했습니다.   
+
+
+# 학습 결과 (Result of Train)
 
