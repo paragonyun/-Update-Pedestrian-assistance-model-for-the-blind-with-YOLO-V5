@@ -67,13 +67,25 @@ Roboflow only supports three times the maximum number of free image increases, s
 Bus dataset : 8,000 Images  
 Cross dataset : 36,000 Images  
   
-두 데이터를 단순하게 합치면 당연히 Cross 쪽의 데이터가 더 많으므로 버스를 상대적으로 인식하지 못했습니다. 때문에 Undersampling을 진행하여 8,000 : 8,000으로 데이터셋의 비율을 맞추는 것으로 데이터셋 간 불균형을 해소했습니다.  
+두 데이터를 단순하게 합치면 당연히 Cross 쪽의 데이터가 더 많으므로 버스를 상대적으로 인식하지 못했습니다. 때문에 Undersampling을 진행하여 8,000 : 8,000으로 데이터셋의 비율을 맞추는 것으로 데이터셋 간 불균형을 해소했습니다.   
+When the two data are simply combined, of course, there is more data on the Cross side, so the bus was relatively unrecognized. Therefore, we solved the imbalance between datasets by matching the data set ratio to 8,000 : 8,000 by performing Undersampling.  
   
 다만 각 데이터셋 '내부'의 클래스 불균형은 해소하지 않고 그대로 진행했습니다. 각 class는 BUS 혹은 Zebra-Cross와 항상 함께 나타나는 특징이 있었기 때문입니다.  
-(Ex : 버스는 무조건 노선 번호가 있고 횡단보도는 '엔간하면' 보행자 신호등이 있음)  
+(Ex : 버스는 무조건 노선 번호가 있고 횡단보도는 '엔간하면' 보행자 신호등이 있음)   
+However, the class imbalance of each dataset 'inside' was not resolved and proceeded as it was. This is because each class has a feature that always appears with BUS or Zebra-Cross.  
+(Ex : Buses must have route numbers and crosswalks have pedestrian traffic lights when 'engaged')  
   
-물론 이미지 합성을 통해 데이터셋 내부의 불균형을 해소하는 방안도 떠올랐지만 기술 부족으로 시현해내지 못했습니다.   
+물론 이미지 합성을 통해 데이터셋 내부의 불균형을 해소하는 방안도 떠올랐지만 기술 부족으로 시현해내지 못했습니다.     
+Of course, there was also a way to resolve the imbalance within the dataset through image photoshop, but it was not realized due to lack of technology.
+  
+# 학습 결과 (Result of Train)  
+Wandb로 시각화한 결과입니다.  
+Visualizations with Wandb!!   
+![image](https://user-images.githubusercontent.com/83996346/181914732-6b9003b4-8ad4-4a45-afe2-aed11e0f09f4.png)
+![image](https://user-images.githubusercontent.com/83996346/181914766-b0dd4f15-8f31-4f3a-a848-0a27c29e0b69.png)
+![image](https://user-images.githubusercontent.com/83996346/181914925-c93d399b-d784-420c-8db6-2728654cd571.png)
 
-
-# 학습 결과 (Result of Train)
-
+### Train and Valid Batch
+![image](https://user-images.githubusercontent.com/83996346/181914965-c8bbb98e-a3ac-4457-ad01-f6858d64a948.png)
+![image](https://user-images.githubusercontent.com/83996346/181914983-009e863f-4b4d-4a10-9561-437bb75ee13b.png)
+![image](https://user-images.githubusercontent.com/83996346/181914993-fdc2b6c0-f50a-4771-aa85-5f6c1c254b29.png)
