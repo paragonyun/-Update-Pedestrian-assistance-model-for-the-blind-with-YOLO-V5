@@ -5,7 +5,9 @@
 ![깃허브용3](https://user-images.githubusercontent.com/83996346/181016587-2555f1cd-a426-4271-abfd-8fa2e86c0087.gif)
 ![깃허브용4](https://user-images.githubusercontent.com/83996346/181016851-e2afb538-1607-4729-9316-55aa65459757.gif)
 ![깃허브용5](https://user-images.githubusercontent.com/83996346/181017517-7f85be0c-ec6c-40ab-b130-e82b5212e43d.gif)
-
+  
+[이전 버전(Previous Version)](https://github.com/paragonyun/Pedestrian-assistance-model-for-the-blind-with-YOLO-V5)  
+  
 시각장애인의 안전한 보행을 위한 모델입니다.   
 더불어 타야하는 버스가 왔음에도 불구하고 음성안내를 못 듣고 지나치는 경우가 있어 불편함을 겪는다는 내용을 기사를 통해 파악했습니다. 그런 상황을 방지하기 위해 버스와 버스의 번호까지 Detection으로 탐지하는 기능을 추가했습니다.   
 This is a model for safe walking for the blind.  
