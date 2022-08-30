@@ -1,0 +1,317 @@
+YOLOv5 temporarily requires wandb version 0.12.10 or below. Some features may not work as expected.
+                 from  n    params  module                                  arguments
+  0                -1  1      7040  models.common.Conv                      [3, 64, 6, 2, 2]
+  1                -1  1     73984  models.common.Conv                      [64, 128, 3, 2]
+  2                -1  3    156928  models.common.C3                        [128, 128, 3]
+  3                -1  1    295424  models.common.Conv                      [128, 256, 3, 2]
+  4                -1  6   1118208  models.common.C3                        [256, 256, 6]
+  5                -1  1   1180672  models.common.Conv                      [256, 512, 3, 2]
+  6                -1  9   6433792  models.common.C3                        [512, 512, 9]
+  7                -1  1   4720640  models.common.Conv                      [512, 1024, 3, 2]
+  8                -1  3   9971712  models.common.C3                        [1024, 1024, 3]
+  9                -1  1   2624512  models.common.SPPF                      [1024, 1024, 5]
+ 10                -1  1    525312  models.common.Conv                      [1024, 512, 1, 1]
+ 11                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 12           [-1, 6]  1         0  models.common.Concat                    [1]
+ 13                -1  3   2757632  models.common.C3                        [1024, 512, 3, False]
+ 14                -1  1    131584  models.common.Conv                      [512, 256, 1, 1]
+ 15                -1  1         0  torch.nn.modules.upsampling.Upsample    [None, 2, 'nearest']
+ 16           [-1, 4]  1         0  models.common.Concat                    [1]
+ 17                -1  3    690688  models.common.C3                        [512, 256, 3, False]
+ 18                -1  1    590336  models.common.Conv                      [256, 256, 3, 2]
+ 19          [-1, 14]  1         0  models.common.Concat                    [1]
+ 20                -1  3   2495488  models.common.C3                        [512, 512, 3, False]
+ 21                -1  1   2360320  models.common.Conv                      [512, 512, 3, 2]
+ 22          [-1, 10]  1         0  models.common.Concat                    [1]
+ 23                -1  3   9971712  models.common.C3                        [1024, 1024, 3, False]
+ 24      [17, 20, 23]  1    102315  models.yolo.Detect                      [14, [[10, 13, 16, 30, 33, 23], [30, 61, 62, 45, 59, 119], [116, 90, 156, 198, 373, 326]], [256, 512, 1024]]
+YOLOv5l summary: 468 layers, 46208299 parameters, 46208299 gradients, 108.5 GFLOPs
+Transferred 606/613 items from yolov5l.pt
+[34m[1mAMP: [39m[22mchecks passed ✅
+Scaled weight_decay = 0.0005
+[34m[1moptimizer:[39m[22m SGD with parameter groups 101 weight (no decay), 104 weight, 104 bias
+[34m[1malbumentations: [39m[22mversion 1.0.3 required by YOLOv5, but version 0.1.12 is currently installed
+[34m[1mtrain: [39m[22mScanning '/content/busbusbus/train/labels.cache' images and labels... 14838 found, 0 missing, 1 empty, 202 corrupt: 100% 14838/14838 [00:00<?, ?it/s]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_000522.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0003]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_002706.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0002]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_007899.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0006]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_009670.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_010230.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0005]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_011373.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_015370.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0006]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_022166.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0004]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_022619.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_KSC_P000008.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0005]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_002470.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0002]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_024694.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [          1]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_026615.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0026]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_027913.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0003]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_035051.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0018]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_035491.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0043]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_035927.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0006]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_038262.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0004]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_044184.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_064283.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [          1]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_064304.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0003]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_067082.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0003]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_074325.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_076507.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0006]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_083450.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_090844.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0015]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_098178.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_105650.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_105764.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_105968.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_106500.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_106677.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_106679.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0005]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_106690.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_107313.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0006]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_107465.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_107746.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_107906.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_107927.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_108984.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_109232.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_109234.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0014]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_111034.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_111065.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_111071.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_111074.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_111082.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_111113.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_111217.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_111311.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_112170.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_112322.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0005]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_112347.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_112378.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_112388.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_112528.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_112656.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_112816.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_112874.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_113044.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_113157.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_113163.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_113277.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_113863.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_113908.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_114036.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_114502.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_114696.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_114976.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_115087.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_115669.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_115744.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_116961.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_116986.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_117089.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_117138.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_117153.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_117302.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_117461.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_117613.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_117917.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_120685.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_122957.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_123260.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_123649.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_123657.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_123879.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_123886.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_124013.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_124146.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_210624_B078561.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0014]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_210945_B078816.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_214708_P008253.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_217075_P008672.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_217809_P008831.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_218799_B085108.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_219713_P009301.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0015]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_219899_B085948.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_221117_P009649.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_221731_B087247.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0014]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_223528_P010352.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0006]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_226401_P011006.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_227462_P011193.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_227541_B091716.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_227684_B091830.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_227700_P011244.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0014]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_227728_B091865.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_227742_P011254.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [          1]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_227952_P011295.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_228515_B092490.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0022]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_228662_B092605.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_229343_B093147.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_230219_B093817.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_230499_B094050.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_230506_B094056.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_230708_B094220.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_231074_B094505.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_231704_P012231.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_232951_P012716.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0002]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_234742_B097056.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_234833_P013079.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_235964_B098066.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_237227_P013470.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0005]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_238144_P013690.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_240117_B101208.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_240578_B101556.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_240777_P014430.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_240949_B101848.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_241974_P014838.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_242331_P015036.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_243553_B103319.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_243664_P015616.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_243717_P015636.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_243760_P015649.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_244024_B103619.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0002]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_244351_B103832.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_244857_P016013.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_246051_B104985.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0014]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_246262_B105101.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_246294_B105124.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0014]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_246551_P016576.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_246565_P016584.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B001634.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B002844.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0002]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B004643.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0005]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B004910.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0006]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B007287.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B008999.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0027]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B014462.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B014996.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B015319.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B023497.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B029262.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B038164.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B040816.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B042737.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B043738.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B043978.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B044371.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B045326.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B045420.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B045652.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B046075.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B047584.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B047984.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B051725.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B051754.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B051829.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0005]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B052079.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B052529.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B052862.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B053145.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0006]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B054215.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B054687.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B055364.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B055699.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B055764.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B057073.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B057303.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B059838.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B060179.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B060243.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B060658.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B062913.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B063038.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_B063767.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_MIN_008161.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/MP_SEL_P005253.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0007]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED1_KSC_068287_L_P017542.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0023]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED1_KSC_068611_L_P017833.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED1_KSC_073669_L_P018450.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0003]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED1_KSC_100939_L_P030148.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0002]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED2_KSC_009112_L_P001461.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED2_KSC_022807_L_P003787.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED2_KSC_023369_L_P004030.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED2_KSC_024436_L_P004260.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED2_KSC_056541_L_P014534.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED2_KSC_105843_L_P031995.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED3_KSC_047294_L_P009246.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED3_KSC_052348_L_P012107.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0013]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED3_KSC_095504_L_P028637.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mtrain: [39m[22mWARNING: /content/busbusbus/train/images/ZED3_KSC_126013_L_P032751.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mval: [39m[22mScanning '/content/busbusbus/valid/labels.cache' images and labels... 1211 found, 0 missing, 0 empty, 17 corrupt: 100% 1211/1211 [00:00<?, ?it/s]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_042932.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [          1]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_049616.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0003]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_107894.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_109126.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_112466.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_115254.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_217296_B083968.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_237784_B099564.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0012]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_237881_B099639.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0011]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_241053_P014489.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_243968_B103584.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0009]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_B001062.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0008]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_B005285.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0002]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_B046142.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_B048018.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [      1.001]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/MP_SEL_B050108.jpg: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0014]
+[34m[1mval: [39m[22mWARNING: /content/busbusbus/valid/images/ZED3_KSC_052488_L_P012198.png: ignoring corrupt image/label: non-normalized or out of bounds coordinates [     1.0006]
+Plotting labels to runs/train/final_data_time_test4/labels.jpg...
+[34m[1mAutoAnchor: [39m[22m4.11 anchors/target, 0.999 Best Possible Recall (BPR). Current anchors are a good fit to dataset ✅
+Image sizes 640 train, 640 val
+Using 4 dataloader workers
+Logging results to [1mruns/train/final_data_time_test4
+Starting training for 1 epochs...
+     Epoch   gpu_mem       box       obj       cls    labels  img_size
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+       0/0     9.17G     0.104   0.03773   0.06806        90       640:  10% 90/915 [01:35<14:36,  1.06s/it]
+Traceback (most recent call last):
+  File "/content/gdrive/MyDrive/yolov5/train.py", line 667, in <module>
+    main(opt)
+  File "/content/gdrive/MyDrive/yolov5/train.py", line 562, in main
+    train(opt.hyp, opt, device, callbacks)
+  File "/content/gdrive/MyDrive/yolov5/train.py", line 353, in train
+    loss, loss_items = compute_loss(pred, targets.to(device))  # loss scaled by batch_size
+KeyboardInterrupt
