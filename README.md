@@ -37,6 +37,8 @@ In addition, the article found out that even though the bus that the blind has t
 1. 셀렉트 스타 - :vertical_traffic_light:교차로 및 화폐 정보 데이터셋 from..  [Here](https://open.selectstar.ai/data-set/wesee)
 2. 자체 제작 데이터셋 - :bus:버스 및 노선 번호 정보 데이터셋 with.. [Roboflow](https://roboflow.com/) :new:
 
+If you See My Dataset [Click Here!](https://drive.google.com/drive/folders/1OKXhqMoakII_cTNPnCnNWlfOP46OmKF-?usp=sharing)
+
 # 데이터셋 구축 (Building Dataset) :new:
 - 이미지 (Images) : 나무위키 서울시 버스 데이터 활용 (Namu Wiki Bus Images) [Here](https://namu.wiki/w/%EC%84%9C%EC%9A%B8%20%EB%B2%84%EC%8A%A4%20101)  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 405 of Original Images  
